@@ -1,0 +1,26 @@
+{
+  "name": "processon",
+  "productName": "Processon",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --arm64",
+    "pkg": "build/quickpkg dist/mac-arm64/Processon.app --output dist/processon.pkg"
+  },
+  "mac": {
+    "icon": "build/icon.icns",
+    "target": {
+      "target": "dir",
+      "arch": "arm64"
+    },
+    "artifactName": "${productName}_setup_${version}.${ext}"
+  },
+  "author": "dvlcis",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^15.0.0",
+    "electron-builder": "^22.11.7"
+  }
+}
